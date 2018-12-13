@@ -8,6 +8,10 @@ public class Node{
 		prev = p;
 	}
 	
+	public int get() {
+		return data;
+	}
+	
 	public Node next() {
 		return next;
 	}
