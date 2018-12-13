@@ -23,6 +23,18 @@ public class MyLinkedList{
 		return size;
 	}
 
+	private Integer get(int index) {
+		Node s = start;
+		if(index < size - 1 && index >= 0) {
+			for(int i = 0;i < index; i++) {
+				s = s.next();
+			}
+			return s.get();
+		}
+		return null;
+
+	}
+
 	public boolean add(Integer value) {
 		Node n = new Node(value);
 		n.setNext(null);
