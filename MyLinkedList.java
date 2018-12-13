@@ -18,16 +18,21 @@ public class MyLinkedList{
 	}
 
 	public boolean add(int value) {
-		Node n = new Node(value,null,end);
+		Node n = new Node(value);
+		n.setNext(null);
+		n.setPrev(end);
 		end.setNext(n);
 		end = n;
+		size++;
+		return true;
 	}
 	
 	public String toString() {
 		String out = "";
 		Node s = start;
+		out += s.get() + ",";
 		while(s.next() != null) {
-			out += s.next().get();
+			out += s.next().get() + ",";
 			s = s.next();
 		}
 		return out;

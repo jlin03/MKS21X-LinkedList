@@ -2,10 +2,8 @@ public class Node{
 	private int data;
 	private Node next,prev;
 	
-	public Node(int val, Node n, Node p) {
+	public Node(int val) {
 		data = val;
-		next = n;
-		prev = p;
 	}
 	
 	public int get() {
