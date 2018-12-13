@@ -23,21 +23,20 @@ public class MyLinkedList{
 		return size;
 	}
 
-	public boolean add(int value) {
+	public boolean add(Integer value) {
 		Node n = new Node(value);
 		n.setNext(null);
 		if(this.size() > 0) {
 			n.setPrev(end);
 			end.setNext(n);
 			end = n;
-			size++;
 		}
 		else {
 			n.setPrev(null);
 			start = n;
 			end = n;
 		}
-
+		size++;
 		return true;
 	}
 
