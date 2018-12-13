@@ -12,7 +12,7 @@ public class Node{
 		return data;
 	}
 
-	public set(Integer val) {
+	public void set(Integer val) {
 		data = val;
 	}
 
