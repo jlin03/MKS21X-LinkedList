@@ -36,6 +36,18 @@ public class MyLinkedList{
 		return false;
 	}
 
+	public int indexOf(Integer value) {
+		if(this.size() > 0) {
+			Node s = start;
+			for(int i = 0;i < this.size(); i++) {
+				if(s.getData() == value) {
+					return i;
+				}
+				s = s.next();
+			}
+		}
+		return -1;
+	}
 
 	private Node getNthNode(int index) {
 		Node s = start;
