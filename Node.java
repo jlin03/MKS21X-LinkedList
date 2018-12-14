@@ -2,10 +2,15 @@ public class Node{
 	private Integer data;
 	private Node next,prev;
 
-	public Node() {}
+	public Node() {
+		next = null;
+		prev = null;
+	}
 
 	public Node(Integer val) {
 		data = val;
+		next = null;
+		prev = null;
 	}
 
 	public int getData() {
