@@ -29,7 +29,7 @@ public class MyLinkedList{
 			for(int i = 0;i < index; i++) {
 				s = s.next();
 			}
-			return s.get();
+			return s.getData();
 		}
 		return null;
 
@@ -55,9 +55,9 @@ public class MyLinkedList{
 	public String toString() {
 		String out = "";
 		Node s = start;
-		out += s.get() + ",";
+		out += s.getData() + ",";
 		while(s.next() != null) {
-			out += s.next().get() + ",";
+			out += s.next().getData() + ",";
 			s = s.next();
 		}
 		return out;

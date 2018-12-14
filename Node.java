@@ -8,11 +8,11 @@ public class Node{
 		data = val;
 	}
 
-	public int get() {
+	public int getData() {
 		return data;
 	}
 
-	public void set(Integer val) {
+	public void setData(Integer val) {
 		data = val;
 	}
 
