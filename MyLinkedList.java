@@ -61,23 +61,19 @@ public class MyLinkedList{
 	}
 
 	public Integer get(int index) {
-		Node s = start;
+		Node n = null;
 		if(index < this.size() - 1 && index >= 0) {
-			for(int i = 0;i < index; i++) {
-				s = s.next();
-			}
-			return s.getData();
+			n = getNthNode(index);
+			return n.getData();
 		}
 		return null;
 	}
 
 	public Integer set(int index, Integer value) {
-		Node s = start;
+		Node n = null;
 		if(index >= 0 && index < this.size()) {
-			for(int i = 0; i < index;i++) {
-				s = s.next();
-			}
-			s.setData(value);
+			n = getNthNode(index);
+			n.setData(value);
 		}
 		return value;
 	}
@@ -98,6 +94,8 @@ public class MyLinkedList{
 		size++;
 		return true;
 	}
+
+
 
 	public String toString() {
 		String out = "";
