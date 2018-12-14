@@ -24,12 +24,20 @@ public class MyLinkedList{
 	}
 
 	public boolean contains(Integer value) {
-
-
-
+		if(this.size() > 0) {
+			Node s = start;
+			for(int i = 0;i < this.size(); i++) {
+				if(s.getData() == value) {
+					return true;
+				}
+				s = s.next();
+			}
+		}
+		return false;
 	}
 
-	private Node get(int index) {
+
+	private Node getNthNode(int index) {
 		Node s = start;
 		if(index < this.size() - 1 && index >= 0) {
 			for(int i = 0;i < index; i++) {
