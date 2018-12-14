@@ -110,6 +110,26 @@ public class MyLinkedList{
 		}
 	}
 
+	public Integer remove(int index) {
+		if(index >= 0 && index < this.size()) {
+			if(this.size() == 2) {
+				if(index == 0) {
+					end.setPrev(null);
+					start = end;
+				}
+				if(index == 1) {
+					start.setNext(null);
+					end = start;
+				}
+			}
+			if(this.size() == 1) {
+				start = null;
+				end = null;
+			}
+
+		}
+	}
+
 
 	public String toString() {
 		String out = "";
