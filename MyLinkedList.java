@@ -80,14 +80,12 @@ public class MyLinkedList{
 
 	public boolean add(Integer value) {
 		Node n = new Node(value);
-		n.setNext(null);
 		if(this.size() > 0) {
 			n.setPrev(end);
 			end.setNext(n);
 			end = n;
 		}
 		else {
-			n.setPrev(null);
 			start = n;
 			end = n;
 		}
@@ -95,6 +93,22 @@ public class MyLinkedList{
 		return true;
 	}
 
+	public void add(int index,Integer value) {
+		if(index >= 0 && index < this.size()) {
+			Node n = new Node(value);
+			if(index == 0) {
+				n.setNext(start);
+				start.setPrev(n);
+				start = n;
+			}
+			else {
+				n.setNext(getNthNode(index+1));
+				n.setPrev(getNthNode(index-1));
+				getNthNode(index+1).setPrev(n);
+				getNthNode(index-1).setNext(n);
+			}
+		}
+	}
 
 
 	public String toString() {
