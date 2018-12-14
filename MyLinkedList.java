@@ -23,16 +23,43 @@ public class MyLinkedList{
 		return size;
 	}
 
-	private Integer get(int index) {
+	public boolean contains(Integer value) {
+
+
+
+	}
+
+	private Node get(int index) {
 		Node s = start;
-		if(index < size - 1 && index >= 0) {
+		if(index < this.size() - 1 && index >= 0) {
+			for(int i = 0;i < index; i++) {
+				s = s.next();
+			}
+			return s;
+		}
+		return null;
+	}
+
+	public Integer get(int index) {
+		Node s = start;
+		if(index < this.size() - 1 && index >= 0) {
 			for(int i = 0;i < index; i++) {
 				s = s.next();
 			}
 			return s.getData();
 		}
 		return null;
+	}
 
+	public Integer set(int index, Integer value) {
+		Node s = start;
+		if(index >= 0 && index < this.size()) {
+			for(int i = 0; i < index;i++) {
+				s = s.next();
+			}
+			s.setData(value);
+		}
+		return value;
 	}
 
 	public boolean add(Integer value) {
