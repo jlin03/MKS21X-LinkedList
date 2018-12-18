@@ -107,11 +107,14 @@ public class MyLinkedList{
 				getNthNode(index+1).setPrev(n);
 				getNthNode(index-1).setNext(n);
 			}
+			size++;
 		}
 	}
 
 	public Integer remove(int index) {
+		Integer val = null;
 		if(index >= 0 && index < this.size()) {
+			val = getNthNode(index).getData();
 			if(this.size() == 2) {
 				if(index == 0) {
 					end.setPrev(null);
@@ -140,12 +143,15 @@ public class MyLinkedList{
 					getNthNode(index + 1).setNext(getNthNode(index - 1));
 				}
 			}
-
+			size--;
 		}
+		return val;
 	}
 	
 	public boolean remove(Integer value) {
+		int s = this.size();
 		remove(indexOf(value));
+		return(s != this.size());
 	}
 	
 	
