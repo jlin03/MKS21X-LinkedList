@@ -126,9 +126,25 @@ public class MyLinkedList{
 				start = null;
 				end = null;
 			}
+			else {
+				if(index == 0) {
+					start = start.next();
+					start.setPrev(null);
+				}
+				if(index == 1) {
+					end = end.prev();
+					end.setNext(null);
+				}
+				else {
+					getNthNode(index - 1).setNext(getNthNode(index + 1));
+					getNthNode(index + 1).setNext(getNthNode(index - 1));
+				}
+			}
 
 		}
 	}
+	
+	
 
 
 	public String toString() {
