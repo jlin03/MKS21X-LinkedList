@@ -144,6 +144,10 @@ public class MyLinkedList{
 		}
 	}
 	
+	public boolean remove(Integer value) {
+		remove(indexOf(value));
+	}
+	
 	
 
 
